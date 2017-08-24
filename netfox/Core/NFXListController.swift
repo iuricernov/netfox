@@ -14,6 +14,10 @@ class NFXListController: NFXGenericController {
 
     override func viewDidLoad() {
         super.viewDidLoad()        
+
+        if NFX.sharedInstance().getSelectedGesture() ~= .custom {
+            self.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: NFX.sharedInstance(), action: Selector("hide"))
+        }
     }
     
     
